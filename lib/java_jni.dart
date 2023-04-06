@@ -1,7 +1,4 @@
 library java_jni;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'src/third_party/java/io/_package.dart';
+export 'src/third_party/java/util/_package.dart';

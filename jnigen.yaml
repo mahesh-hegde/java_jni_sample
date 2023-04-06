@@ -10,10 +10,9 @@ output:
 
 ## Classes / packages for which bindings need to be generated.
 classes:
-  - java.util.HashMap
+  - java.util.jar
   - java.io.InputStream
   - java.io.OutputStream
 
 source_path:
   - 'sources/java.base/'
-

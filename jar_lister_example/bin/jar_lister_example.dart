@@ -1,5 +1,19 @@
-import 'package:jar_lister_example/jar_lister_example.dart' as jar_lister_example;
+import 'dart:io';
+
+import 'package:jni/jni.dart';
+import 'package:java_jni/java_jni.dart';
+
+void printContents(String path) {
+  var jar = JarFile(path.toJString());
+  var entries = jar.entries();
+  while (entries.hasMoreElements()) {
+    var entry = entries.nextElement();
+    var name = entry.getName().toDartString(deleteOriginal: true);
+    stdout.writeln(name);
+  }
+}
 
 void main(List<String> arguments) {
-  print('Hello world: ${jar_lister_example.calculate()}!');
+  Jni.spawn(dylibDir: 'build/jni_libs');
+  arguments.forEach(printContents);
 }

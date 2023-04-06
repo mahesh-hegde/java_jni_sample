@@ -21,13 +21,15 @@ import "dart:ffi" as ffi;
 import "package:jni/internal_helpers_for_jnigen.dart";
 import "package:jni/jni.dart" as jni;
 
+import "../zip/ZipEntry.dart" as zipentry_;
+
 import "Attributes.dart" as attributes_;
 import "../../../_init.dart";
 
 /// from: java.util.jar.JarEntry
 ///
 /// This class is used to represent a JAR file entry.
-class JarEntry extends jni.JObject {
+class JarEntry extends zipentry_.ZipEntry {
   late final jni.JObjType? _$type;
   @override
   jni.JObjType get $type => _$type ??= type;
@@ -42,124 +44,124 @@ class JarEntry extends jni.JObject {
   static const type = $JarEntryType();
 
   /// from: static public final int CENATT
-  static const CENATT = 36;
+  static const CENATT1 = 36;
 
   /// from: static public final int CENATX
-  static const CENATX = 38;
+  static const CENATX1 = 38;
 
   /// from: static public final int CENCOM
-  static const CENCOM = 32;
+  static const CENCOM1 = 32;
 
   /// from: static public final int CENCRC
-  static const CENCRC = 16;
+  static const CENCRC1 = 16;
 
   /// from: static public final int CENDSK
-  static const CENDSK = 34;
+  static const CENDSK1 = 34;
 
   /// from: static public final int CENEXT
-  static const CENEXT = 30;
+  static const CENEXT1 = 30;
 
   /// from: static public final int CENFLG
-  static const CENFLG = 8;
+  static const CENFLG1 = 8;
 
   /// from: static public final int CENHDR
-  static const CENHDR = 46;
+  static const CENHDR1 = 46;
 
   /// from: static public final int CENHOW
-  static const CENHOW = 10;
+  static const CENHOW1 = 10;
 
   /// from: static public final int CENLEN
-  static const CENLEN = 24;
+  static const CENLEN1 = 24;
 
   /// from: static public final int CENNAM
-  static const CENNAM = 28;
+  static const CENNAM1 = 28;
 
   /// from: static public final int CENOFF
-  static const CENOFF = 42;
+  static const CENOFF1 = 42;
 
   /// from: static public final long CENSIG
-  static const CENSIG = 33639248;
+  static const CENSIG1 = 33639248;
 
   /// from: static public final int CENSIZ
-  static const CENSIZ = 20;
+  static const CENSIZ1 = 20;
 
   /// from: static public final int CENTIM
-  static const CENTIM = 12;
+  static const CENTIM1 = 12;
 
   /// from: static public final int CENVEM
-  static const CENVEM = 4;
+  static const CENVEM1 = 4;
 
   /// from: static public final int CENVER
-  static const CENVER = 6;
+  static const CENVER1 = 6;
 
   /// from: static public final int ENDCOM
-  static const ENDCOM = 20;
+  static const ENDCOM1 = 20;
 
   /// from: static public final int ENDHDR
-  static const ENDHDR = 22;
+  static const ENDHDR1 = 22;
 
   /// from: static public final int ENDOFF
-  static const ENDOFF = 16;
+  static const ENDOFF1 = 16;
 
   /// from: static public final long ENDSIG
-  static const ENDSIG = 101010256;
+  static const ENDSIG1 = 101010256;
 
   /// from: static public final int ENDSIZ
-  static const ENDSIZ = 12;
+  static const ENDSIZ1 = 12;
 
   /// from: static public final int ENDSUB
-  static const ENDSUB = 8;
+  static const ENDSUB1 = 8;
 
   /// from: static public final int ENDTOT
-  static const ENDTOT = 10;
+  static const ENDTOT1 = 10;
 
   /// from: static public final int EXTCRC
-  static const EXTCRC = 4;
+  static const EXTCRC1 = 4;
 
   /// from: static public final int EXTHDR
-  static const EXTHDR = 16;
+  static const EXTHDR1 = 16;
 
   /// from: static public final int EXTLEN
-  static const EXTLEN = 12;
+  static const EXTLEN1 = 12;
 
   /// from: static public final long EXTSIG
-  static const EXTSIG = 134695760;
+  static const EXTSIG1 = 134695760;
 
   /// from: static public final int EXTSIZ
-  static const EXTSIZ = 8;
+  static const EXTSIZ1 = 8;
 
   /// from: static public final int LOCCRC
-  static const LOCCRC = 14;
+  static const LOCCRC1 = 14;
 
   /// from: static public final int LOCEXT
-  static const LOCEXT = 28;
+  static const LOCEXT1 = 28;
 
   /// from: static public final int LOCFLG
-  static const LOCFLG = 6;
+  static const LOCFLG1 = 6;
 
   /// from: static public final int LOCHDR
-  static const LOCHDR = 30;
+  static const LOCHDR1 = 30;
 
   /// from: static public final int LOCHOW
-  static const LOCHOW = 8;
+  static const LOCHOW1 = 8;
 
   /// from: static public final int LOCLEN
-  static const LOCLEN = 22;
+  static const LOCLEN1 = 22;
 
   /// from: static public final int LOCNAM
-  static const LOCNAM = 26;
+  static const LOCNAM1 = 26;
 
   /// from: static public final long LOCSIG
-  static const LOCSIG = 67324752;
+  static const LOCSIG1 = 67324752;
 
   /// from: static public final int LOCSIZ
-  static const LOCSIZ = 18;
+  static const LOCSIZ1 = 18;
 
   /// from: static public final int LOCTIM
-  static const LOCTIM = 10;
+  static const LOCTIM1 = 10;
 
   /// from: static public final int LOCVER
-  static const LOCVER = 4;
+  static const LOCVER1 = 4;
 
   static final _id_ctor = jniAccessors.getMethodIDOf(
       _classRef, r"<init>", r"(Ljava/lang/String;)V");
@@ -187,7 +189,7 @@ class JarEntry extends jni.JObject {
   /// specified <code>ZipEntry</code> object.
   ///@param ze the <code>ZipEntry</code> object to create the
   ///           <code>JarEntry</code> from
-  JarEntry.ctor1(jni.JObject ze)
+  JarEntry.ctor1(zipentry_.ZipEntry ze)
       : super.fromRef(jniAccessors
             .newObjectWithArgs(_classRef, _id_ctor1, [ze.reference]).object);
 

@@ -21,37 +21,34 @@ import "dart:ffi" as ffi;
 import "package:jni/internal_helpers_for_jnigen.dart";
 import "package:jni/jni.dart" as jni;
 
-import "../zip/ZipException.dart" as zipexception_;
 import "../../../_init.dart";
 
-/// from: java.util.jar.JarException
+/// from: java.util.zip.DataFormatException
 ///
-/// Signals that an error of some sort has occurred while reading from
-/// or writing to a JAR file.
+/// Signals that a data format error has occurred.
 ///@author David Connelly
-///@since 1.2
-class JarException extends zipexception_.ZipException {
+class DataFormatException extends jni.JObject {
   late final jni.JObjType? _$type;
   @override
   jni.JObjType get $type => _$type ??= type;
 
-  JarException.fromRef(
+  DataFormatException.fromRef(
     jni.JObjectPtr ref,
   ) : super.fromRef(ref);
 
   static final _classRef =
-      jniAccessors.getClassOf(r"java/util/jar/JarException");
+      jniAccessors.getClassOf(r"java/util/zip/DataFormatException");
 
   /// The type which includes information such as the signature of this class.
-  static const type = $JarExceptionType();
+  static const type = $DataFormatExceptionType();
   static final _id_ctor =
       jniAccessors.getMethodIDOf(_classRef, r"<init>", r"()V");
 
   /// from: public void <init>()
   /// The returned object must be deleted after use, by calling the `delete` method.
   ///
-  /// Constructs a JarException with no detail message.
-  JarException()
+  /// Constructs a DataFormatException with no detail message.
+  DataFormatException()
       : super.fromRef(
             jniAccessors.newObjectWithArgs(_classRef, _id_ctor, []).object);
 
@@ -61,19 +58,21 @@ class JarException extends zipexception_.ZipException {
   /// from: public void <init>(java.lang.String s)
   /// The returned object must be deleted after use, by calling the `delete` method.
   ///
-  /// Constructs a JarException with the specified detail message.
-  ///@param s the detail message
-  JarException.ctor1(jni.JString s)
+  /// Constructs a DataFormatException with the specified detail message.
+  /// A detail message is a String that describes this particular exception.
+  ///@param s the String containing a detail message
+  DataFormatException.ctor1(jni.JString s)
       : super.fromRef(jniAccessors
             .newObjectWithArgs(_classRef, _id_ctor1, [s.reference]).object);
 }
 
-class $JarExceptionType extends jni.JObjType<JarException> {
-  const $JarExceptionType();
+class $DataFormatExceptionType extends jni.JObjType<DataFormatException> {
+  const $DataFormatExceptionType();
 
   @override
-  String get signature => r"Ljava/util/jar/JarException;";
+  String get signature => r"Ljava/util/zip/DataFormatException;";
 
   @override
-  JarException fromRef(jni.JObjectPtr ref) => JarException.fromRef(ref);
+  DataFormatException fromRef(jni.JObjectPtr ref) =>
+      DataFormatException.fromRef(ref);
 }

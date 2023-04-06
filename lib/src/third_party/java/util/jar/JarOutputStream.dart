@@ -21,9 +21,13 @@ import "dart:ffi" as ffi;
 import "package:jni/internal_helpers_for_jnigen.dart";
 import "package:jni/jni.dart" as jni;
 
+import "../zip/ZipOutputStream.dart" as zipoutputstream_;
+
 import "../../io/OutputStream.dart" as outputstream_;
 
 import "Manifest.dart" as manifest_;
+
+import "../zip/ZipEntry.dart" as zipentry_;
 import "../../../_init.dart";
 
 /// from: java.util.jar.JarOutputStream
@@ -38,7 +42,7 @@ import "../../../_init.dart";
 ///@see Manifest
 ///@see java.util.zip.ZipOutputStream
 ///@since 1.2
-class JarOutputStream extends jni.JObject {
+class JarOutputStream extends zipoutputstream_.ZipOutputStream {
   late final jni.JObjType? _$type;
   @override
   jni.JObjType get $type => _$type ??= type;
@@ -54,126 +58,126 @@ class JarOutputStream extends jni.JObject {
   static const type = $JarOutputStreamType();
 
   /// from: static public final int CENATT
-  static const CENATT = 36;
+  static const CENATT1 = 36;
 
   /// from: static public final int CENATX
-  static const CENATX = 38;
+  static const CENATX1 = 38;
 
   /// from: static public final int CENCOM
-  static const CENCOM = 32;
+  static const CENCOM1 = 32;
 
   /// from: static public final int CENCRC
-  static const CENCRC = 16;
+  static const CENCRC1 = 16;
 
   /// from: static public final int CENDSK
-  static const CENDSK = 34;
+  static const CENDSK1 = 34;
 
   /// from: static public final int CENEXT
-  static const CENEXT = 30;
+  static const CENEXT1 = 30;
 
   /// from: static public final int CENFLG
-  static const CENFLG = 8;
+  static const CENFLG1 = 8;
 
   /// from: static public final int CENHDR
-  static const CENHDR = 46;
+  static const CENHDR1 = 46;
 
   /// from: static public final int CENHOW
-  static const CENHOW = 10;
+  static const CENHOW1 = 10;
 
   /// from: static public final int CENLEN
-  static const CENLEN = 24;
+  static const CENLEN1 = 24;
 
   /// from: static public final int CENNAM
-  static const CENNAM = 28;
+  static const CENNAM1 = 28;
 
   /// from: static public final int CENOFF
-  static const CENOFF = 42;
+  static const CENOFF1 = 42;
 
   /// from: static public final long CENSIG
-  static const CENSIG = 33639248;
+  static const CENSIG1 = 33639248;
 
   /// from: static public final int CENSIZ
-  static const CENSIZ = 20;
+  static const CENSIZ1 = 20;
 
   /// from: static public final int CENTIM
-  static const CENTIM = 12;
+  static const CENTIM1 = 12;
 
   /// from: static public final int CENVEM
-  static const CENVEM = 4;
+  static const CENVEM1 = 4;
 
   /// from: static public final int CENVER
-  static const CENVER = 6;
+  static const CENVER1 = 6;
 
   /// from: static public final int ENDCOM
-  static const ENDCOM = 20;
+  static const ENDCOM1 = 20;
 
   /// from: static public final int ENDHDR
-  static const ENDHDR = 22;
+  static const ENDHDR1 = 22;
 
   /// from: static public final int ENDOFF
-  static const ENDOFF = 16;
+  static const ENDOFF1 = 16;
 
   /// from: static public final long ENDSIG
-  static const ENDSIG = 101010256;
+  static const ENDSIG1 = 101010256;
 
   /// from: static public final int ENDSIZ
-  static const ENDSIZ = 12;
+  static const ENDSIZ1 = 12;
 
   /// from: static public final int ENDSUB
-  static const ENDSUB = 8;
+  static const ENDSUB1 = 8;
 
   /// from: static public final int ENDTOT
-  static const ENDTOT = 10;
+  static const ENDTOT1 = 10;
 
   /// from: static public final int EXTCRC
-  static const EXTCRC = 4;
+  static const EXTCRC1 = 4;
 
   /// from: static public final int EXTHDR
-  static const EXTHDR = 16;
+  static const EXTHDR1 = 16;
 
   /// from: static public final int EXTLEN
-  static const EXTLEN = 12;
+  static const EXTLEN1 = 12;
 
   /// from: static public final long EXTSIG
-  static const EXTSIG = 134695760;
+  static const EXTSIG1 = 134695760;
 
   /// from: static public final int EXTSIZ
-  static const EXTSIZ = 8;
+  static const EXTSIZ1 = 8;
 
   /// from: static public final int LOCCRC
-  static const LOCCRC = 14;
+  static const LOCCRC1 = 14;
 
   /// from: static public final int LOCEXT
-  static const LOCEXT = 28;
+  static const LOCEXT1 = 28;
 
   /// from: static public final int LOCFLG
-  static const LOCFLG = 6;
+  static const LOCFLG1 = 6;
 
   /// from: static public final int LOCHDR
-  static const LOCHDR = 30;
+  static const LOCHDR1 = 30;
 
   /// from: static public final int LOCHOW
-  static const LOCHOW = 8;
+  static const LOCHOW1 = 8;
 
   /// from: static public final int LOCLEN
-  static const LOCLEN = 22;
+  static const LOCLEN1 = 22;
 
   /// from: static public final int LOCNAM
-  static const LOCNAM = 26;
+  static const LOCNAM1 = 26;
 
   /// from: static public final long LOCSIG
-  static const LOCSIG = 67324752;
+  static const LOCSIG1 = 67324752;
 
   /// from: static public final int LOCSIZ
-  static const LOCSIZ = 18;
+  static const LOCSIZ1 = 18;
 
   /// from: static public final int LOCTIM
-  static const LOCTIM = 10;
+  static const LOCTIM1 = 10;
 
   /// from: static public final int LOCVER
-  static const LOCVER = 4;
+  static const LOCVER1 = 4;
 
-  static final _id_ctor = jniAccessors.getMethodIDOf(_classRef, r"<init>",
+  static final _id_ctor7 = jniAccessors.getMethodIDOf(_classRef, r"<init>",
       r"(Ljava/io/OutputStream;Ljava/util/jar/Manifest;)V");
 
   /// from: public void <init>(java.io.OutputStream out, java.util.jar.Manifest man)
@@ -185,11 +189,11 @@ class JarOutputStream extends jni.JObject {
   ///@param out the actual output stream
   ///@param man the optional <code>Manifest</code>
   ///@exception IOException if an I/O error has occurred
-  JarOutputStream(outputstream_.OutputStream out, manifest_.Manifest man)
+  JarOutputStream.ctor7(outputstream_.OutputStream out, manifest_.Manifest man)
       : super.fromRef(jniAccessors.newObjectWithArgs(
-            _classRef, _id_ctor, [out.reference, man.reference]).object);
+            _classRef, _id_ctor7, [out.reference, man.reference]).object);
 
-  static final _id_ctor1 = jniAccessors.getMethodIDOf(
+  static final _id_ctor5 = jniAccessors.getMethodIDOf(
       _classRef, r"<init>", r"(Ljava/io/OutputStream;)V");
 
   /// from: public void <init>(java.io.OutputStream out)
@@ -198,9 +202,9 @@ class JarOutputStream extends jni.JObject {
   /// Creates a new <code>JarOutputStream</code> with no manifest.
   ///@param out the actual output stream
   ///@exception IOException if an I/O error has occurred
-  JarOutputStream.ctor1(outputstream_.OutputStream out)
+  JarOutputStream.ctor5(outputstream_.OutputStream out)
       : super.fromRef(jniAccessors
-            .newObjectWithArgs(_classRef, _id_ctor1, [out.reference]).object);
+            .newObjectWithArgs(_classRef, _id_ctor5, [out.reference]).object);
 
   static final _id_putNextEntry = jniAccessors.getMethodIDOf(
       _classRef, r"putNextEntry", r"(Ljava/util/zip/ZipEntry;)V");
@@ -216,7 +220,7 @@ class JarOutputStream extends jni.JObject {
   ///@param ze the ZIP/JAR entry to be written
   ///@exception ZipException if a ZIP error has occurred
   ///@exception IOException if an I/O error has occurred
-  void putNextEntry(jni.JObject ze) => jniAccessors.callMethodWithArgs(
+  void putNextEntry(zipentry_.ZipEntry ze) => jniAccessors.callMethodWithArgs(
       reference,
       _id_putNextEntry,
       jni.JniCallType.voidType,

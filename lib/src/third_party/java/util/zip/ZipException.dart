@@ -21,37 +21,37 @@ import "dart:ffi" as ffi;
 import "package:jni/internal_helpers_for_jnigen.dart";
 import "package:jni/jni.dart" as jni;
 
-import "../zip/ZipException.dart" as zipexception_;
 import "../../../_init.dart";
 
-/// from: java.util.jar.JarException
+/// from: java.util.zip.ZipException
 ///
-/// Signals that an error of some sort has occurred while reading from
-/// or writing to a JAR file.
-///@author David Connelly
-///@since 1.2
-class JarException extends zipexception_.ZipException {
+/// Signals that a Zip exception of some sort has occurred.
+///@author unascribed
+///@see java.io.IOException
+///@since JDK1.0
+class ZipException extends jni.JObject {
   late final jni.JObjType? _$type;
   @override
   jni.JObjType get $type => _$type ??= type;
 
-  JarException.fromRef(
+  ZipException.fromRef(
     jni.JObjectPtr ref,
   ) : super.fromRef(ref);
 
   static final _classRef =
-      jniAccessors.getClassOf(r"java/util/jar/JarException");
+      jniAccessors.getClassOf(r"java/util/zip/ZipException");
 
   /// The type which includes information such as the signature of this class.
-  static const type = $JarExceptionType();
+  static const type = $ZipExceptionType();
   static final _id_ctor =
       jniAccessors.getMethodIDOf(_classRef, r"<init>", r"()V");
 
   /// from: public void <init>()
   /// The returned object must be deleted after use, by calling the `delete` method.
   ///
-  /// Constructs a JarException with no detail message.
-  JarException()
+  /// Constructs a <code>ZipException</code> with <code>null</code>
+  /// as its error detail message.
+  ZipException()
       : super.fromRef(
             jniAccessors.newObjectWithArgs(_classRef, _id_ctor, []).object);
 
@@ -61,19 +61,20 @@ class JarException extends zipexception_.ZipException {
   /// from: public void <init>(java.lang.String s)
   /// The returned object must be deleted after use, by calling the `delete` method.
   ///
-  /// Constructs a JarException with the specified detail message.
-  ///@param s the detail message
-  JarException.ctor1(jni.JString s)
+  /// Constructs a <code>ZipException</code> with the specified detail
+  /// message.
+  ///@param s the detail message.
+  ZipException.ctor1(jni.JString s)
       : super.fromRef(jniAccessors
             .newObjectWithArgs(_classRef, _id_ctor1, [s.reference]).object);
 }
 
-class $JarExceptionType extends jni.JObjType<JarException> {
-  const $JarExceptionType();
+class $ZipExceptionType extends jni.JObjType<ZipException> {
+  const $ZipExceptionType();
 
   @override
-  String get signature => r"Ljava/util/jar/JarException;";
+  String get signature => r"Ljava/util/zip/ZipException;";
 
   @override
-  JarException fromRef(jni.JObjectPtr ref) => JarException.fromRef(ref);
+  ZipException fromRef(jni.JObjectPtr ref) => ZipException.fromRef(ref);
 }

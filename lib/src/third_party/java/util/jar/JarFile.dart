@@ -21,9 +21,15 @@ import "dart:ffi" as ffi;
 import "package:jni/internal_helpers_for_jnigen.dart";
 import "package:jni/jni.dart" as jni;
 
+import "../zip/ZipFile.dart" as zipfile_;
+
 import "Manifest.dart" as manifest_;
 
 import "JarEntry.dart" as jarentry_;
+
+import "../zip/ZipEntry.dart" as zipentry_;
+
+import "../Enumeration.dart" as enumeration_;
 
 import "../../io/InputStream.dart" as inputstream_;
 import "../../../_init.dart";
@@ -52,7 +58,7 @@ import "../../../_init.dart";
 ///@see java.util.zip.ZipFile
 ///@see java.util.jar.JarEntry
 ///@since 1.2
-class JarFile extends jni.JObject {
+class JarFile extends zipfile_.ZipFile {
   late final jni.JObjType? _$type;
   @override
   jni.JObjType get $type => _$type ??= type;
@@ -67,124 +73,124 @@ class JarFile extends jni.JObject {
   static const type = $JarFileType();
 
   /// from: static public final int CENATT
-  static const CENATT = 36;
+  static const CENATT1 = 36;
 
   /// from: static public final int CENATX
-  static const CENATX = 38;
+  static const CENATX1 = 38;
 
   /// from: static public final int CENCOM
-  static const CENCOM = 32;
+  static const CENCOM1 = 32;
 
   /// from: static public final int CENCRC
-  static const CENCRC = 16;
+  static const CENCRC1 = 16;
 
   /// from: static public final int CENDSK
-  static const CENDSK = 34;
+  static const CENDSK1 = 34;
 
   /// from: static public final int CENEXT
-  static const CENEXT = 30;
+  static const CENEXT1 = 30;
 
   /// from: static public final int CENFLG
-  static const CENFLG = 8;
+  static const CENFLG1 = 8;
 
   /// from: static public final int CENHDR
-  static const CENHDR = 46;
+  static const CENHDR1 = 46;
 
   /// from: static public final int CENHOW
-  static const CENHOW = 10;
+  static const CENHOW1 = 10;
 
   /// from: static public final int CENLEN
-  static const CENLEN = 24;
+  static const CENLEN1 = 24;
 
   /// from: static public final int CENNAM
-  static const CENNAM = 28;
+  static const CENNAM1 = 28;
 
   /// from: static public final int CENOFF
-  static const CENOFF = 42;
+  static const CENOFF1 = 42;
 
   /// from: static public final long CENSIG
-  static const CENSIG = 33639248;
+  static const CENSIG1 = 33639248;
 
   /// from: static public final int CENSIZ
-  static const CENSIZ = 20;
+  static const CENSIZ1 = 20;
 
   /// from: static public final int CENTIM
-  static const CENTIM = 12;
+  static const CENTIM1 = 12;
 
   /// from: static public final int CENVEM
-  static const CENVEM = 4;
+  static const CENVEM1 = 4;
 
   /// from: static public final int CENVER
-  static const CENVER = 6;
+  static const CENVER1 = 6;
 
   /// from: static public final int ENDCOM
-  static const ENDCOM = 20;
+  static const ENDCOM1 = 20;
 
   /// from: static public final int ENDHDR
-  static const ENDHDR = 22;
+  static const ENDHDR1 = 22;
 
   /// from: static public final int ENDOFF
-  static const ENDOFF = 16;
+  static const ENDOFF1 = 16;
 
   /// from: static public final long ENDSIG
-  static const ENDSIG = 101010256;
+  static const ENDSIG1 = 101010256;
 
   /// from: static public final int ENDSIZ
-  static const ENDSIZ = 12;
+  static const ENDSIZ1 = 12;
 
   /// from: static public final int ENDSUB
-  static const ENDSUB = 8;
+  static const ENDSUB1 = 8;
 
   /// from: static public final int ENDTOT
-  static const ENDTOT = 10;
+  static const ENDTOT1 = 10;
 
   /// from: static public final int EXTCRC
-  static const EXTCRC = 4;
+  static const EXTCRC1 = 4;
 
   /// from: static public final int EXTHDR
-  static const EXTHDR = 16;
+  static const EXTHDR1 = 16;
 
   /// from: static public final int EXTLEN
-  static const EXTLEN = 12;
+  static const EXTLEN1 = 12;
 
   /// from: static public final long EXTSIG
-  static const EXTSIG = 134695760;
+  static const EXTSIG1 = 134695760;
 
   /// from: static public final int EXTSIZ
-  static const EXTSIZ = 8;
+  static const EXTSIZ1 = 8;
 
   /// from: static public final int LOCCRC
-  static const LOCCRC = 14;
+  static const LOCCRC1 = 14;
 
   /// from: static public final int LOCEXT
-  static const LOCEXT = 28;
+  static const LOCEXT1 = 28;
 
   /// from: static public final int LOCFLG
-  static const LOCFLG = 6;
+  static const LOCFLG1 = 6;
 
   /// from: static public final int LOCHDR
-  static const LOCHDR = 30;
+  static const LOCHDR1 = 30;
 
   /// from: static public final int LOCHOW
-  static const LOCHOW = 8;
+  static const LOCHOW1 = 8;
 
   /// from: static public final int LOCLEN
-  static const LOCLEN = 22;
+  static const LOCLEN1 = 22;
 
   /// from: static public final int LOCNAM
-  static const LOCNAM = 26;
+  static const LOCNAM1 = 26;
 
   /// from: static public final long LOCSIG
-  static const LOCSIG = 67324752;
+  static const LOCSIG1 = 67324752;
 
   /// from: static public final int LOCSIZ
-  static const LOCSIZ = 18;
+  static const LOCSIZ1 = 18;
 
   /// from: static public final int LOCTIM
-  static const LOCTIM = 10;
+  static const LOCTIM1 = 10;
 
   /// from: static public final int LOCVER
-  static const LOCVER = 4;
+  static const LOCVER1 = 4;
 
   /// from: static public final java.lang.String MANIFEST_NAME
   ///
@@ -208,7 +214,7 @@ class JarFile extends jni.JObject {
       : super.fromRef(jniAccessors
             .newObjectWithArgs(_classRef, _id_ctor, [name.reference]).object);
 
-  static final _id_ctor1 = jniAccessors.getMethodIDOf(
+  static final _id_ctor6 = jniAccessors.getMethodIDOf(
       _classRef, r"<init>", r"(Ljava/lang/String;Z)V");
 
   /// from: public void <init>(java.lang.String name, boolean verify)
@@ -222,9 +228,9 @@ class JarFile extends jni.JObject {
   ///@throws IOException if an I/O error has occurred
   ///@throws SecurityException if access to the file is denied
   ///         by the SecurityManager
-  JarFile.ctor1(jni.JString name, bool verify)
+  JarFile.ctor6(jni.JString name, bool verify)
       : super.fromRef(jniAccessors.newObjectWithArgs(
-            _classRef, _id_ctor1, [name.reference, verify ? 1 : 0]).object);
+            _classRef, _id_ctor6, [name.reference, verify ? 1 : 0]).object);
 
   static final _id_ctor2 =
       jniAccessors.getMethodIDOf(_classRef, r"<init>", r"(Ljava/io/File;)V");
@@ -243,7 +249,7 @@ class JarFile extends jni.JObject {
       : super.fromRef(jniAccessors
             .newObjectWithArgs(_classRef, _id_ctor2, [file.reference]).object);
 
-  static final _id_ctor3 =
+  static final _id_ctor7 =
       jniAccessors.getMethodIDOf(_classRef, r"<init>", r"(Ljava/io/File;Z)V");
 
   /// from: public void <init>(java.io.File file, boolean verify)
@@ -257,11 +263,11 @@ class JarFile extends jni.JObject {
   ///@throws IOException if an I/O error has occurred
   ///@throws SecurityException if access to the file is denied
   ///         by the SecurityManager.
-  JarFile.ctor3(jni.JObject file, bool verify)
+  JarFile.ctor7(jni.JObject file, bool verify)
       : super.fromRef(jniAccessors.newObjectWithArgs(
-            _classRef, _id_ctor3, [file.reference, verify ? 1 : 0]).object);
+            _classRef, _id_ctor7, [file.reference, verify ? 1 : 0]).object);
 
-  static final _id_ctor4 =
+  static final _id_ctor8 =
       jniAccessors.getMethodIDOf(_classRef, r"<init>", r"(Ljava/io/File;ZI)V");
 
   /// from: public void <init>(java.io.File file, boolean verify, int mode)
@@ -279,8 +285,8 @@ class JarFile extends jni.JObject {
   ///@throws SecurityException if access to the file is denied
   ///         by the SecurityManager
   ///@since 1.3
-  JarFile.ctor4(jni.JObject file, bool verify, int mode)
-      : super.fromRef(jniAccessors.newObjectWithArgs(_classRef, _id_ctor4,
+  JarFile.ctor8(jni.JObject file, bool verify, int mode)
+      : super.fromRef(jniAccessors.newObjectWithArgs(_classRef, _id_ctor8,
             [file.reference, verify ? 1 : 0, jni.JValueInt(mode)]).object);
 
   static final _id_getManifest = jniAccessors.getMethodIDOf(
@@ -330,9 +336,12 @@ class JarFile extends jni.JObject {
   ///         <code>null</code> if not found
   ///@throws IllegalStateException may be thrown if the jar file has been closed
   ///@see java.util.zip.ZipEntry
-  jni.JObject getEntry(jni.JString name) =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(reference,
-          _id_getEntry, jni.JniCallType.objectType, [name.reference]).object);
+  zipentry_.ZipEntry getEntry(jni.JString name) =>
+      const zipentry_.$ZipEntryType().fromRef(jniAccessors.callMethodWithArgs(
+          reference,
+          _id_getEntry,
+          jni.JniCallType.objectType,
+          [name.reference]).object);
 
   static final _id_entries = jniAccessors.getMethodIDOf(
       _classRef, r"entries", r"()Ljava/util/Enumeration;");
@@ -341,9 +350,10 @@ class JarFile extends jni.JObject {
   /// The returned object must be deleted after use, by calling the `delete` method.
   ///
   /// Returns an enumeration of the zip file entries.
-  jni.JObject entries() =>
-      const jni.JObjectType().fromRef(jniAccessors.callMethodWithArgs(
-          reference, _id_entries, jni.JniCallType.objectType, []).object);
+  enumeration_.Enumeration<jarentry_.JarEntry> entries() =>
+      const enumeration_.$EnumerationType(jarentry_.$JarEntryType()).fromRef(
+          jniAccessors.callMethodWithArgs(
+              reference, _id_entries, jni.JniCallType.objectType, []).object);
 
   static final _id_stream = jniAccessors.getMethodIDOf(
       _classRef, r"stream", r"()Ljava/util/stream/Stream;");
@@ -370,7 +380,7 @@ class JarFile extends jni.JObject {
   ///@throws SecurityException if any of the jar file entries
   ///         are incorrectly signed.
   ///@throws IllegalStateException may be thrown if the jar file has been closed
-  inputstream_.InputStream getInputStream(jni.JObject ze) =>
+  inputstream_.InputStream getInputStream(zipentry_.ZipEntry ze) =>
       const inputstream_.$InputStreamType().fromRef(jniAccessors
           .callMethodWithArgs(reference, _id_getInputStream,
               jni.JniCallType.objectType, [ze.reference]).object);

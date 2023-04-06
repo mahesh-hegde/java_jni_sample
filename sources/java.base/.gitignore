@@ -1,0 +1,9 @@
+/android/
+/androidx/
+/java/
+/javax/
+/org/
+/com/
+/dalvik/
+*.java
+*.html

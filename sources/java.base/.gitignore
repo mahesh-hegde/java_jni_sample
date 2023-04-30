@@ -6,4 +6,5 @@
 /com/
 /dalvik/
 *.java
+!module-info.java
 *.html
